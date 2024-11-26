@@ -5,17 +5,22 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.juan.models.User;
 
 
 @RestController
+@RequestMapping("/api")
 public class UserRestController {
     
-    @GetMapping("/detail2")
+    @GetMapping(path = "/detail2")
     public Map<String, Object> details() {
+        User user = new User("Juan", "Carlos");
         Map<String, Object> model = new HashMap<String , Object>();
         model.put("title", "Hola Mundo Spring boot desde User Controller");
-        model.put("name", "Juan Carlos");
+        model.put("name", user);
         model.put("lastname", "Suarez Marin");
         return model;
     }

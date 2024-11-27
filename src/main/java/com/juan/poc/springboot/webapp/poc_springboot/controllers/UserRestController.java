@@ -33,7 +33,7 @@ public class UserRestController {
         UserDto userDto = new UserDto();
         User user =  new User("Juan", "Carlos");
         userDto.setUser(user);
-        userDto.setTitle("Hola Mundo");
+        userDto.setTitle("Hola Mundooo");
         return userDto;
     }
     

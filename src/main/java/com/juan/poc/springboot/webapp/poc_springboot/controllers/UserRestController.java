@@ -1,7 +1,6 @@
 package com.juan.poc.springboot.webapp.poc_springboot.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import com.juan.models.dto.UserDto;
 import org.springframework.stereotype.Controller;
@@ -27,9 +26,19 @@ public class UserRestController {
         return model;
     }
 
-    @GetMapping("/details")
-    public UserDto details(Model model) {
+    @GetMapping("/list")
+    public List<User> list() {
+        List<User> users = new ArrayList<>();
+        users.add(new User("juan", "suarez"));
+        users.add(new User("andrea", "perez"));
+        users.add(new User("marina", "martinez"));
 
+        return users;
+
+    }
+
+    @GetMapping("/detail")
+    public UserDto details(Model model) {
         UserDto userDto = new UserDto();
         User user =  new User("Juan", "Carlos");
         userDto.setUser(user);

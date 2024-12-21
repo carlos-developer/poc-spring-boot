@@ -1,4 +1,4 @@
-package models;
+package com.juan.poc.springboot.webapp.poc_springboot.models;
 
 public class Product implements  Cloneable{
     private Long id;

@@ -1,15 +1,16 @@
-package services;
+package com.juan.poc.springboot.webapp.poc_springboot.services;
 
-import models.Product;
-import repositories.ProductRepository;
+import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
+import com.juan.poc.springboot.webapp.poc_springboot.repositories.ProductRepositoryImpl;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository repository = new ProductRepository();
+    private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 
+    @Override
     public List<Product> findAll() {
         return  repository.findAll().stream().map(p ->{
            Double priceTax = p.getPrice() * 1.25;
@@ -19,6 +20,7 @@ public class ProductService {
            return newProduct;
         }).collect(Collectors.toList());
     }
+    @Override
     public Product findById(Long id) {
         return repository.findById(id);
     }

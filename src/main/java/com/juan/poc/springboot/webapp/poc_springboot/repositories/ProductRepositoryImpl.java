@@ -1,14 +1,14 @@
-package repositories;
+package com.juan.poc.springboot.webapp.poc_springboot.repositories;
 
-import models.Product;
+import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ProductRepository {
+public class ProductRepositoryImpl implements IProductRepository{
     private List<Product> data;
 
-    public ProductRepository() {
+    public ProductRepositoryImpl() {
         this.data = Arrays.asList(
                 new Product(1L, "Memoria Corsair 32", 300L),
                 new Product(2L, "Cpu Intel Core i9", 180L),
@@ -16,11 +16,12 @@ public class ProductRepository {
                 new Product(4L, "Motherboard Gigabyte", 490L)
         );
     }
-
+    @Override
     public List<Product> findAll() {
         return data;
     }
 
+    @Override
     public Product findById(Long id) {
         return data.stream().filter(p -> p.getId().equals(id)).findFirst().orElseThrow();
     }

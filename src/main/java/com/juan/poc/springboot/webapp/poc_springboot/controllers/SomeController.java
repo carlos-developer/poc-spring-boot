@@ -1,4 +1,4 @@
-package controllers;
+package com.juan.poc.springboot.webapp.poc_springboot.controllers;
 
 import models.Product;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,6 @@ public class SomeController {
 
     @GetMapping
     public List<Product> list() {
-        System.out.println("Imprimiendo en consola");
         return service.findAll();
     }
 

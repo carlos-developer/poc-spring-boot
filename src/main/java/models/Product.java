@@ -1,6 +1,6 @@
 package models;
 
-public class Product {
+public class Product implements  Cloneable{
     private Long id;
     private String name;
     private Long price;
@@ -36,5 +36,14 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            return new Product(this.getId(), this.getName(), price);
+        }
     }
 }

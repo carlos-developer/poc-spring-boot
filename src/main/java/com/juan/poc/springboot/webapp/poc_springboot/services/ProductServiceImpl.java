@@ -2,14 +2,14 @@ package com.juan.poc.springboot.webapp.poc_springboot.services;
 
 import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
 import com.juan.poc.springboot.webapp.poc_springboot.repositories.IProductRepository;
-import com.juan.poc.springboot.webapp.poc_springboot.repositories.ProductRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired

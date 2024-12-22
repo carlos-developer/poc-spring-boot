@@ -1,6 +1,7 @@
 package com.juan.poc.springboot.webapp.poc_springboot.controllers;
 
 import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
+import com.juan.poc.springboot.webapp.poc_springboot.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +16,7 @@ import java.util.List;
 public class SomeController {
 
     @Autowired
-    private ProductServiceImpl service;
+    private ProductService service;
 
     @GetMapping
     public List<Product> list() {

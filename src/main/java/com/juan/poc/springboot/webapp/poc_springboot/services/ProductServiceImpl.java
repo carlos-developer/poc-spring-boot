@@ -1,6 +1,7 @@
 package com.juan.poc.springboot.webapp.poc_springboot.services;
 
 import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
+import com.juan.poc.springboot.webapp.poc_springboot.repositories.IProductRepository;
 import com.juan.poc.springboot.webapp.poc_springboot.repositories.ProductRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepositoryImpl repository;
+    private IProductRepository repository;
 
     @Override
     public List<Product> findAll() {

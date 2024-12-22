@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
 
-@Primary
+
 @Repository
 public class ProductRepositoryFooImpl implements IProductRepository {
 

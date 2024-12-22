@@ -1,11 +1,16 @@
 package com.juan.poc.springboot.webapp.poc_springboot.repositories;
 
 import com.juan.poc.springboot.webapp.poc_springboot.models.Product;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
+
+
+@Primary
 
 @Repository
 public class ProductRepositoryImpl implements IProductRepository{

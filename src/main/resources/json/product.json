@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Leyendo desde un json",
+    "price": 15
+  },
+  {
+    "id": 2,
+    "name": "Cpu Intel Core i9",
+    "price": 945
+  },
+  {
+    "id": 3,
+    "name": "Teclado Razer Mini 60%",
+    "price": 1312
+  },
+  {
+    "id": 4,
+    "name": "Motherboard Gigabyte",
+    "price": 2572
+  }
+]

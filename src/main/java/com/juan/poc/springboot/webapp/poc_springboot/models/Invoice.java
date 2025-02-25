@@ -43,6 +43,6 @@ public class Invoice {
     }
 
     public int getTotal() {
-        return 0;
+        return items.stream().map(Item::getImporte).reduce(0, Integer::sum);
     }
 }

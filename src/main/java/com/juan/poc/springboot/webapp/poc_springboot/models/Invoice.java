@@ -1,5 +1,6 @@
 package com.juan.poc.springboot.webapp.poc_springboot.models;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +11,8 @@ import java.util.List;
 @Component
 public class Invoice {
 
+
+
     @Autowired
     private Client client;
 
@@ -19,6 +22,13 @@ public class Invoice {
     @Autowired
     @Qualifier("default")
     private List<Item> items;
+
+    @PostConstruct
+    public void init() {
+        System.out.println("Creando el componenre de la factura");
+        client.setName(client.getName().concat(" Pepe"));
+        description = description.concat(" del cliente: ").concat(client.getName()).concat(" ").concat(client.getLastName());
+    }
 
     public Client getClient() {
         return client;
